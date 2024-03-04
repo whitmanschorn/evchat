@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Edgevanta's Super Very Difficult Expert Level Take Home Problem
 
-## Getting Started
+Before you begin, you will need to create two free accounts:  
+- Create a free Convex account - [https://www.convex.dev/](https://www.convex.dev/)  
+- Create a free Vercel account - [https://vercel.com/edgevanta](https://vercel.com/edgevanta)
 
-First, run the development server:
+Now we can get started with the fun stuff. You will be creating a crude messaging app using Convex and Next.js. Here are the directions:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Begin by creating a Next.13 (or later) app using the App Router.  
+- Create two routes, one for “alice” and one for “bob” and link to them from the home page.  
+- Create a new component called MessageTerminal that contains a textarea input and a submit button.  
+- In your convex dashboard ([https://dashboard.convex.dev/](https://dashboard.convex.dev/)) create a convex table for storing messages (as well as the message’s sender).  
+- Create a convex function for submitting messages to the table.  
+- Update the MessageTerminal component so that a user can type a message and submit it to convex.  
+- Add the MessageTerminal component to the Alice and Bob routes.  
+- Update the component so that the user’s name (”bob” or “alice”) is submitted and stored along with the message.  
+- Write a convex function for retrieving the most recent 10 messages and update the MessageTerminal component to display these messages (as well as the user that sent it).  
+- Deploy your app to Vercel and check that it is working as expected.  
+- Contact Slack and Discord and let them know that they have a new competitor.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bonus points: Use Tailwind anywhere to make it look pretty!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Helpful links:  
+- Convex Quickstart - [https://docs.convex.dev/quickstart/nextjs](https://docs.convex.dev/quickstart/nextjs)
