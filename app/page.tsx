@@ -13,7 +13,7 @@ export default function Home() {
               href="/alice"
               className="text-blue-500 hover:text-blue-700 transition duration-150 ease-in-out"
             >
-              Go to Alice's Page
+              Go to Alice&apos;s Page
             </Link>
           </li>
           <li className="mb-2">
@@ -21,7 +21,7 @@ export default function Home() {
               href="/bob"
               className="text-blue-500 hover:text-blue-700 transition duration-150 ease-in-out"
             >
-              Go to Bob's Page
+              Go to Bob&apos;s Page
             </Link>
           </li>
         </ul>
