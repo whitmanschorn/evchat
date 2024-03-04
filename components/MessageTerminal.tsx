@@ -53,7 +53,7 @@ export default function MessageTerminal({ authorName }: MessageTerminalProps) {
                   title={
                     message.likes > 0
                       ? `liked by ${message.likeAuthors.join(", ")}`
-                      : "no likes"
+                      : "likes this message"
                   }
                   onClick={async (e) => {
                     if (!alreadyLiked) {
