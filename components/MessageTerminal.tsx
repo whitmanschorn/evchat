@@ -2,7 +2,6 @@
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { useEffect, useState, useRef } from "react";
-import { faker } from "@faker-js/faker";
 import Link from "next/link";
 
 export default function MessageTerminal({ authorName }) {
