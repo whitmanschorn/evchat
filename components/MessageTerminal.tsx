@@ -15,14 +15,13 @@ export default function MessageTerminal({ authorName }: MessageTerminalProps) {
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const [newMessageText, setNewMessageText] = useState("");
-
   useEffect(() => {
     setTimeout(() => {
       if (chatEndRef.current !== null) {
         chatEndRef.current.scrollTop = chatEndRef.current.scrollHeight;
       }
     }, 0);
-  }, [messages]);
+  }, [messages?.length]);
 
   return (
     <main className="mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
