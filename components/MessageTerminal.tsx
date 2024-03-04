@@ -4,18 +4,23 @@ import { api } from "../convex/_generated/api";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 
-export default function MessageTerminal({ authorName }) {
+interface MessageTerminalProps {
+  authorName: string;
+}
+export default function MessageTerminal({ authorName }: MessageTerminalProps) {
   const messages = useQuery(api.messages.list);
   const sendMessage = useMutation(api.messages.send);
   const likeMessage = useMutation(api.messages.like);
   const unlikeMessage = useMutation(api.messages.unlike);
-  const chatEndRef = useRef(null);
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   const [newMessageText, setNewMessageText] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
-      chatEndRef.current.scrollTop = chatEndRef.current.scrollHeight;
+      if (chatEndRef.current !== null) {
+        chatEndRef.current.scrollTop = chatEndRef.current.scrollHeight;
+      }
     }, 0);
   }, [messages]);
 
@@ -46,8 +51,9 @@ export default function MessageTerminal({ authorName }) {
                 {message.body}
                 <button
                   title={
-                    message.likes > 0 &&
-                    `liked by ${message.likeAuthors.join(", ")}`
+                    message.likes > 0
+                      ? `liked by ${message.likeAuthors.join(", ")}`
+                      : "no likes"
                   }
                   onClick={async (e) => {
                     if (!alreadyLiked) {
@@ -87,7 +93,7 @@ export default function MessageTerminal({ authorName }) {
           onChange={(e) => setNewMessageText(e.target.value)}
           placeholder="Write a message…"
           className="flex-1 p-2 rounded-md border-2 border-gray-200 resize-none focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          rows="1"
+          rows={1}
         ></textarea>
         <button
           type="submit"
